@@ -39,12 +39,12 @@ public class Consulta {
     @Column
     private String descricao;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_pet", nullable = false)
     @NotNull
     private Pet pet;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_veterinario", nullable = false)
     @NotNull
     private Veterinario veterinario;
