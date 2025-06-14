@@ -33,12 +33,16 @@ public class Pet {
     @Column(nullable = false)
     private String especie;
 
+    @Column
     private String raca;
 
+    @Column
     private String cor;
 
+    @Column
     private Integer idade;
 
+    @Column
     private String sexo;
 
     @ManyToOne(fetch = FetchType.LAZY)
