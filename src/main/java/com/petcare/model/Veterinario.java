@@ -24,7 +24,7 @@ public class Veterinario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_veterinario;
 
     @Column(nullable = false)
     private String nome;

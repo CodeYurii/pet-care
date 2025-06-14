@@ -25,7 +25,7 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_pet;
 
     @Column(nullable = false)
     private String nome;
@@ -46,7 +46,7 @@ public class Pet {
     private String sexo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tutor_id", nullable = false)
+    @JoinColumn(name = "id_tutor", nullable = false)
     @NotNull
     private Tutor tutor;
 }

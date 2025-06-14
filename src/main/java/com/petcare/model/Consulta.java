@@ -5,9 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
 
 // Gera métodos getters, setters, to strings, equals and hashcode)
@@ -24,21 +27,32 @@ import java.util.List;
 
 // Cria um construtor vazio (sem argumentos)
 @NoArgsConstructor
-public class Tutor {
+public class Consulta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_tutor;
+    private Long id;
 
     @Column(nullable = false)
-    private String nome;
-
-    @Column(nullable = false)
-    private String cpf;
+    private LocalDateTime data;
 
     @Column
-    private List<String> telefones = new ArrayList<>();
+    private String descricao;
+
+    @OneToOne
+    @JoinColumn(name = "id_pet", nullable = false)
+    @NotNull
+    private Pet pet;
+
+    @OneToOne
+    @JoinColumn(name = "id_veterinario", nullable = false)
+    @NotNull
+    private Veterinario veterinario;
 
     @Column
-    private String endereco;
+    private String observacoes;
+
+    @Column
+    private List<String> remedios = new ArrayList<>();
+
 }
