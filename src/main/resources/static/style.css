@@ -1,0 +1,57 @@
+/* --- Reset básico --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* --- Container geral --- */
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Título principal --- */
+h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #2c3e50;
+}
+
+/* --- Lista de tutores --- */
+ul.tutores {
+    list-style: none;
+    padding: 0;
+}
+
+ul.tutores li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s ease;
+}
+
+ul.tutores li:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Botão novo tutor --- */
+a.novo-tutor {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+a.novo-tutor:hover {
+    background-color: #2980b9;
+}

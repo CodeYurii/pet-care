@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Novo Tutor</title>
+</head>
+<body>
+<h1>Cadastrar Novo Tutor</h1>
+
+<form th:action="@{/tutores}" th:object="${tutor}" method="post">
+    <label>Nome: <input type="text" th:field="*{nome}" /></label><br/>
+    <label>CPF: <input type="text" th:field="*{cpf}" /></label><br/>
+    <label>Telefone: <input type="text" th:field="*{telefone}" /></label><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
