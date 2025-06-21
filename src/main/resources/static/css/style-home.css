@@ -1,0 +1,60 @@
+/* === RESET BÁSICO === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.home-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+    width: 90%;
+    max-width: 480px;
+}
+
+/* === TÍTULO PRINCIPAL === */
+.home-container h1 {
+    font-size: 28px;
+    color: #81a1c1;
+    margin-bottom: 36px;
+}
+
+/* === MENU DE OPÇÕES === */
+.menu-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* === BOTÕES DE MENU === */
+.menu-opcoes a {
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    background: linear-gradient(135deg, #5f72be, #9b23ea);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(155, 35, 234, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.menu-opcoes a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(155, 35, 234, 0.6);
+    background: linear-gradient(135deg, #9b23ea, #5f72be);
+}

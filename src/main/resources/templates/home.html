@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PetCare - Página Inicial</title>
+    <link rel="stylesheet" href="/css/style-home.css"/>
+</head>
+<body>
+<div class="home-container">
+    <h1>🐾 PetCare - Gestão</h1>
+
+    <div class="menu-opcoes">
+        <a th:href="@{/consultas}">Consultas</a>
+        <a th:href="@{/veterinarios}">Veterinários</a>
+        <a th:href="@{/tutores}">Tutores</a>
+        <a th:href="@{/pets}">Pets</a>
+    </div>
+
+</div>
+</body>
+</html>

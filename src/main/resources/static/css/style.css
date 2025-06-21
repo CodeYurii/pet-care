@@ -1,12 +1,22 @@
-body {
+/* === RESET GLOBAL === */
+* {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212 !important;
-    color: #e0e0e0 !important;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.my-container {
-    max-width: 960px;
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* === CONTAINER CENTRALIZADO === */
+body > div,
+body > form,
+body > ul {
+    max-width: 640px;
     margin: 40px auto;
     padding: 24px 30px;
     background-color: #1e1e1e;
@@ -14,87 +24,32 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
 }
 
+/* === TÍTULOS === */
 h1 {
-    font-size: 32px;
-    margin-bottom: 32px;
-    color: #81a1c1;
-    font-weight: 600;
-}
-
-/* resto do CSS igual ao que te passei */
-
-
-/* --- Lista de tutores --- */
-ul.tutores {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 12px rgba(0,0,0,0.5);
-    background-color: #292929;
-}
-
-ul.tutores li {
-    padding: 18px 24px;
-    border-bottom: 1px solid #3a3a3a;
-    transition: background-color 0.3s ease;
-    cursor: default;
-}
-
-ul.tutores li:hover {
-    background-color: #3e4551; /* hover suave */
-}
-
-/* --- Botão novo tutor --- */
-a.novo-tutor {
-    display: inline-block;
-    margin-bottom: 28px;
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #667eea, #764ba2); /* degrade moderno */
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-a.novo-tutor:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    box-shadow: 0 6px 16px rgba(118, 75, 162, 0.9);
-}
-
-/* Container geral (como no primeiro) */
-.my-container {
-    max-width: 480px;
-    margin: 40px auto;
-    padding: 30px 32px;
-    background-color: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
-    color: #e0e0e0;
-}
-
-/* Título */
-.my-container h1 {
     font-size: 28px;
     margin-bottom: 32px;
     color: #81a1c1;
     font-weight: 600;
+    text-align: center;
 }
 
-/* Formulário */
-.form-tutor label {
-    display: block;
-    margin-bottom: 18px;
+/* === FORMULÁRIOS === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
     font-weight: 500;
     font-size: 16px;
 }
 
-/* Inputs */
-.form-tutor input[type="text"] {
-    margin-top: 6px;
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"] {
     width: 100%;
     padding: 10px 14px;
     background-color: #292929;
@@ -103,65 +58,17 @@ a.novo-tutor:hover {
     color: #ddd;
     font-size: 15px;
     transition: border-color 0.3s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.form-tutor input[type="text"]:focus {
-    outline: none;
-    border-color: #81a1c1;
-    background-color: #222;
-    color: #fff;
-}
-
-/* Botão */
-.btn-submit {
-    display: inline-block;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-submit:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    box-shadow: 0 6px 16px rgba(118, 75, 162, 0.9);
-}
-
-/* --- Estilo para formulário geral --- */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-form input[type="text"],
-form input[type="number"],
-form input[type="datetime-local"] {
-    padding: 10px 14px;
-    background-color: #292929;
-    border: 1.5px solid #444;
-    border-radius: 8px;
-    color: #e0e0e0;
-    font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: border-color 0.3s ease;
-}
-
-form input:focus {
+input:focus {
     outline: none;
     border-color: #81a1c1;
     background-color: #1c1c1c;
 }
 
-/* --- Botão padrão dos formulários --- */
-form button {
-    width: fit-content;
+/* === BOTÕES === */
+button,
+.btn-submit {
     align-self: flex-start;
     padding: 10px 24px;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -175,12 +82,34 @@ form button {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-form button:hover {
+button:hover,
+.btn-submit:hover {
     background: linear-gradient(135deg, #764ba2, #667eea);
     box-shadow: 0 6px 16px rgba(118, 75, 162, 0.9);
 }
 
-/* --- Estilo para listas (ul) --- */
+/* === LINKS DE AÇÃO === */
+a,
+a.novo-tutor {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #5f72be, #9b23ea);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(155, 35, 234, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover,
+a.novo-tutor:hover {
+    background: linear-gradient(135deg, #9b23ea, #5f72be);
+    box-shadow: 0 6px 14px rgba(155, 35, 234, 0.6);
+}
+
+/* === LISTAS === */
 ul {
     list-style: none;
     padding: 0;
@@ -200,48 +129,23 @@ ul li:hover {
     background-color: #3e4551;
 }
 
-/* --- Links de ação (Novo Veterinário, Nova Consulta etc.) --- */
-a {
-    display: inline-block;
-    margin-bottom: 24px;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #5f72be, #9b23ea);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(155, 35, 234, 0.4);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+/* === COMPONENTE ESPECÍFICO: Lista de Tutores === */
+ul.tutores {
+    margin-top: 0;
 }
 
-a:hover {
-    background: linear-gradient(135deg, #9b23ea, #5f72be);
-    box-shadow: 0 6px 14px rgba(155, 35, 234, 0.6);
-}
-
-/* --- Estilo para título (h1) --- */
-h1 {
-    font-size: 28px;
-    margin-bottom: 32px;
-    color: #81a1c1;
-    font-weight: 600;
-}
-
-/* --- Container reaproveitado --- */
-body {
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body > div,
-body > form,
-body > ul {
-    max-width: 640px;
+/* === LAYOUT CONSISTENTE DE CONTEÚDO === */
+.my-container {
+    max-width: 960px;
+    padding: 30px 32px;
     margin: 40px auto;
-    padding: 24px 30px;
     background-color: #1e1e1e;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
 }
+
+/* === ESPECÍFICO DE FORMULÁRIO DE TUTOR === */
+.form-tutor input[type="text"] {
+    margin-top: 6px;
+}
+
