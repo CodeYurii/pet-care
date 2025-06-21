@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nova Consulta</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<h1>Cadastro de Consulta</h1>
+<form th:action="@{/consultas}" method="post" th:object="${consulta}">
+    <input type="datetime-local" th:field="*{data}" /><br/>
+    <input type="text" th:field="*{descricao}" placeholder="Descrição"/><br/>
+    <input type="text" th:field="*{observacoes}" placeholder="Observações"/><br/>
+    <input type="text" th:field="*{idPet}" placeholder="ID do Pet"/><br/>
+    <input type="text" th:field="*{idVeterinario}" placeholder="ID do Veterinário"/><br/>
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>

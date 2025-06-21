@@ -29,7 +29,7 @@ public class TutorController {
     @GetMapping("/novo")
     public String novoTutorForm(Model model) {
         model.addAttribute("tutor", new Tutor());
-        return "novo-tutor"; // templates/novo-tutor.html
+        return "novo-tutor";
     }
 
     @PostMapping

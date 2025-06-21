@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Consultas</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<h1>Consultas</h1>
+<a th:href="@{/consultas/novo}">Nova Consulta</a>
+<ul>
+    <li th:each="c : ${consultas}">
+        <span th:text="${c.data} + ' - ' + ${c.pet.nome} + ' com ' + ${c.veterinario.nome}"></span>
+    </li>
+</ul>
+</body>
+</html>

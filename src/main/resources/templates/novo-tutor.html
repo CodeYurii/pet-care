@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8" />
     <title>Novo Tutor</title>
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-<h1>Cadastrar Novo Tutor</h1>
+<div class="my-container">
+    <h1>Cadastrar Novo Tutor</h1>
 
-<form th:action="@{/tutores}" th:object="${tutor}" method="post">
-    <label>Nome: <input type="text" th:field="*{nome}" /></label><br/>
-    <label>CPF: <input type="text" th:field="*{cpf}" /></label><br/>
-    <label>Telefone: <input type="text" th:field="*{telefone}" /></label><br/>
+    <form th:action="@{/tutores}" th:object="${tutor}" method="post" class="form-tutor">
+        <label>
+            Nome:
+            <input type="text" th:field="*{nome}" placeholder="Digite o nome" />
+        </label>
+        <label>
+            CPF:
+            <input type="text" th:field="*{cpf}" placeholder="000.000.000-00" />
+        </label>
+        <label>
+            Telefone:
+            <input type="text" th:field="*{telefone}" placeholder="(00) 00000-0000" />
+        </label>
+        <label>
+            Endereço:
+            <input type="text" th:field="*{endereco}" placeholder="Rua, número, bairro" />
+        </label>
 
-    <button type="submit">Salvar</button>
-</form>
+        <button type="submit" class="btn-submit">Salvar</button>
+    </form>
+</div>
 </body>
 </html>

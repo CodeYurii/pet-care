@@ -17,27 +17,18 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "consultas")
+@Document("consultas")
 public class Consulta {
-
     @Id
     private String id;
-
-    @NotNull
     private LocalDateTime data;
-
     private String descricao;
-
+    private String observacoes;
+    private List<String> remedios = new ArrayList<>();
 
     @DBRef
-    @NotNull
     private Pet pet;
 
     @DBRef
-    @NotNull
     private Veterinario veterinario;
-
-    private String observacoes;
-
-    private List<String> remedios = new ArrayList<>();
 }

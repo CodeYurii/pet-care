@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Novo Veterinário</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<h1>Cadastro de Veterinário</h1>
+<form th:action="@{/veterinarios}" method="post" th:object="${veterinario}">
+  <input type="text" th:field="*{nome}" placeholder="Nome"/><br/>
+  <input type="text" th:field="*{cpf}" placeholder="CPF"/><br/>
+  <input type="number" th:field="*{crmv}" placeholder="CRMV"/><br/>
+  <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
