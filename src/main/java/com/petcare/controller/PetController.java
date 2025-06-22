@@ -1,5 +1,6 @@
 package com.petcare.controller;
 
+import com.petcare.dto.PetDTO;
 import com.petcare.entity.Pet;
 import com.petcare.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +18,30 @@ public class PetController {
     private PetService petService;
 
     @PostMapping
-    public ResponseEntity<Pet> salvar(@RequestBody Pet pet) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(petService.salvar(pet));
+    public ResponseEntity<PetDTO> salvar(@RequestBody PetDTO petDTO) {
+        PetDTO salvo = petService.salvar(petDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
     }
 
     @GetMapping
-    public List<Pet> listar() {
+    public List<PetDTO> listar() {
         return petService.listar();
     }
 
     @GetMapping("/{id}")
-    public Pet buscar(@PathVariable Long id) {
-        return petService.buscarPorId(id);
+    public ResponseEntity<PetDTO> buscar(@PathVariable String id) {
+        PetDTO pet = petService.buscarPorId(id);
+        return ResponseEntity.ok(pet);
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id) {
+    public ResponseEntity<Void> deletar(@PathVariable String id) {
         petService.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/tutor/{tutorId}")
+    public List<PetDTO> listarPorTutor(@PathVariable String tutorId) {
+        return petService.listarPorTutorId(tutorId);
     }
 }

@@ -4,5 +4,5 @@ Como rodar o Mongo utilizando Docker
 2 - inicie o bash na pasta do projeto
 3 - suba o docker-compose utilizando o comando "docker-compose up -d"
 4 - verifique se esta rodando o container com o comando "docker ps"
-5 -
+
 

@@ -1,11 +1,14 @@
 package com.petcare.service;
 
+import com.petcare.dto.PetDTO;
 import com.petcare.entity.Pet;
 import com.petcare.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class PetService {
@@ -13,19 +16,59 @@ public class PetService {
     @Autowired
     private PetRepository petRepository;
 
-    public Pet salvar(Pet pet) {
-        return petRepository.save(pet);
+    // Converte DTO para entidade Pet
+    private Pet toEntity(PetDTO dto) {
+        return Pet.builder()
+                .id(dto.getId())
+                .idTutor(dto.getIdTutor())
+                .nome(dto.getNome())
+                .especie(dto.getEspecie())
+                .raca(dto.getRaca())
+                .cor(dto.getCor())
+                .idade(dto.getIdade())
+                .sexo(dto.getSexo())
+                .build();
     }
 
-    public List<Pet> listar() {
-        return petRepository.findAll();
+    // Converte entidade Pet para DTO
+    private PetDTO toDTO(Pet pet) {
+        return PetDTO.builder()
+                .id(pet.getId())
+                .idTutor(pet.getIdTutor())
+                .nome(pet.getNome())
+                .especie(pet.getEspecie())
+                .raca(pet.getRaca())
+                .cor(pet.getCor())
+                .idade(pet.getIdade())
+                .sexo(pet.getSexo())
+                .build();
     }
 
-    public Pet buscarPorId(Long id) {
-        return petRepository.findById(String.valueOf(id)).orElseThrow();
+    public PetDTO salvar(PetDTO dto) {
+        Pet pet = toEntity(dto);
+        Pet salvo = petRepository.save(pet);
+        return toDTO(salvo);
     }
 
-    public void deletar(Long id) {
-        petRepository.deleteById(String.valueOf(id));
+    public List<PetDTO> listar() {
+        return petRepository.findAll().stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
+    }
+
+    public PetDTO buscarPorId(String id) {
+        Pet pet = petRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Pet não encontrado"));
+        return toDTO(pet);
+    }
+
+    public void deletar(String id) {
+        petRepository.deleteById(id);
+    }
+
+    public List<PetDTO> listarPorTutorId(String idTutor) {
+        return petRepository.findByIdTutor(idTutor).stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
     }
 }

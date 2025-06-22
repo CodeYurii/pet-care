@@ -1,7 +1,0 @@
-docker run -d \
-  --name mongo-petcare \
-  -p 27017:27017 \
-  -v mongo-data:/data/db \
-  mongo
-
-

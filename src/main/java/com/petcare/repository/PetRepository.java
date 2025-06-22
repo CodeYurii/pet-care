@@ -7,5 +7,5 @@ import java.util.List;
 
 
 public interface PetRepository extends MongoRepository<Pet, String> {
-    List<Pet> findByNomeContainingIgnoreCase(String nome);
+    List<Pet> findByIdTutor(String idTutor);
 }

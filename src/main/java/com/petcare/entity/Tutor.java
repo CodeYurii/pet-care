@@ -41,5 +41,4 @@ public class Tutor {
     @NotBlank
     private String endereco;
 
-    private List<Pet> pets;
 }

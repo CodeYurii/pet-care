@@ -1,7 +1,9 @@
 package com.petcare.controller;
 
+import com.petcare.dto.TutorDTO;
 import com.petcare.entity.Tutor;
 import com.petcare.repository.TutorRepository;
+import com.petcare.service.TutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class TutorController {
     @Autowired
     private TutorRepository tutorRepository;
 
+    @Autowired
+    private TutorService tutorService;
+
     @GetMapping
     public String listar(Model model) {
         List<Tutor> tutores = tutorRepository.findAll();
@@ -32,9 +37,12 @@ public class TutorController {
         return "tutores/novo-tutor";
     }
 
+
+
     @PostMapping
-    public String salvar(@ModelAttribute Tutor tutor) {
-        tutorRepository.save(tutor);
+    public String salvar(@ModelAttribute TutorDTO dto) {
+        tutorService.salvar(dto);
         return "redirect:/tutores";
     }
+
 }
