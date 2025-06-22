@@ -1,0 +1,8 @@
+/* Estilos específicos da tela de veterinários */
+ul.veterinarios {
+    margin-top: 0;
+}
+
+a.novo-veterinario {
+    margin-bottom: 24px;
+}

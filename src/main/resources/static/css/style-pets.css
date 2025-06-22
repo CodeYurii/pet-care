@@ -1,0 +1,8 @@
+/* Estilos específicos da tela de pets */
+ul.pets {
+    margin-top: 0;
+}
+
+a.novo-pet {
+    margin-bottom: 24px;
+}

@@ -23,13 +23,13 @@ public class TutorController {
     public String listar(Model model) {
         List<Tutor> tutores = tutorRepository.findAll();
         model.addAttribute("tutores", tutores);
-        return "tutores"; // templates/tutores.html
+        return "tutores/tutores"; // templates/tutores.html
     }
 
     @GetMapping("/novo")
     public String novoTutorForm(Model model) {
         model.addAttribute("tutor", new Tutor());
-        return "novo-tutor";
+        return "tutores/novo-tutor";
     }
 
     @PostMapping

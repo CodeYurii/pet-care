@@ -1,0 +1,8 @@
+/* Estilos específicos da tela de consultas */
+ul.consultas {
+    margin-top: 0;
+}
+
+a.nova-consulta {
+    margin-bottom: 24px;
+}

@@ -89,8 +89,7 @@ button:hover,
 }
 
 /* === LINKS DE AÇÃO === */
-a,
-a.novo-tutor {
+a {
     display: inline-block;
     margin-bottom: 24px;
     padding: 10px 20px;
@@ -103,13 +102,12 @@ a.novo-tutor {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-a:hover,
-a.novo-tutor:hover {
+a:hover {
     background: linear-gradient(135deg, #9b23ea, #5f72be);
     box-shadow: 0 6px 14px rgba(155, 35, 234, 0.6);
 }
 
-/* === LISTAS === */
+/* === LISTAS PADRÃO === */
 ul {
     list-style: none;
     padding: 0;
@@ -129,12 +127,7 @@ ul li:hover {
     background-color: #3e4551;
 }
 
-/* === COMPONENTE ESPECÍFICO: Lista de Tutores === */
-ul.tutores {
-    margin-top: 0;
-}
-
-/* === LAYOUT CONSISTENTE DE CONTEÚDO === */
+/* === CONTAINER DE LARGURA MAIOR === */
 .my-container {
     max-width: 960px;
     padding: 30px 32px;
@@ -143,9 +136,3 @@ ul.tutores {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.8);
 }
-
-/* === ESPECÍFICO DE FORMULÁRIO DE TUTOR === */
-.form-tutor input[type="text"] {
-    margin-top: 6px;
-}
-

@@ -1,0 +1,13 @@
+/* === COMPONENTES ESPECÍFICOS DA PÁGINA DE TUTORES === */
+
+ul.tutores {
+    margin-top: 0;
+}
+
+a.novo-tutor {
+    margin-bottom: 24px;
+}
+
+.form-tutor input[type="text"] {
+    margin-top: 6px;
+}
