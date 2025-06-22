@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pets</title>
+    <link rel="stylesheet" href="/css/style-global.css">
+    <link rel="stylesheet" href="/css/style-pets.css">
+</head>
+<body>
+<div class="my-container">
+    <div class="top-bar">
+        <a href="/" class="btn-voltar" title="Voltar para Home">
+            ☰
+        </a>
+        <h1>🐶 Pets Cadastrados</h1>
+    </div>
+
+    <a href="/pets/novo" class="btn-acao">➕ Novo Pet</a>
+
+    <table class="tabela-pets">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>ID do Tutor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pet : ${pets}">
+            <td th:text="${pet.nome}">Nome</td>
+            <td th:text="${pet.idTutor}">Tutor</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

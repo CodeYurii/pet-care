@@ -1,8 +1,38 @@
-/* Estilos específicos da tela de veterinários */
-ul.veterinarios {
-    margin-top: 0;
+.btn-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-a.novo-veterinario {
-    margin-bottom: 24px;
+.btn-voltar:hover {
+    background-color: #3a3a3a;
+}
+
+/* Ícone hamburguer */
+.hamburguer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 18px; /* um pouco mais alto para melhor espaçamento */
+}
+
+.hamburguer span {
+    display: block;
+    height: 3px;
+    background-color: #81a1c1;  /* cor visível azul clara */
+    border-radius: 2px;
+    width: 100%;
 }

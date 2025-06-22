@@ -9,8 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -45,7 +43,7 @@ public class ConsultaController {
             model.addAttribute("veterinarios", veterinarioRepo.findAll());
             return "consultas/form";
         } else {
-            return "redirect:/consultas?erro=nao-encontrada";
+            return "redirect:/consultas";
         }
     }
 
