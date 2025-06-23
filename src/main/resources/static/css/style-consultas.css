@@ -1,8 +1,39 @@
-/* Estilos específicos da tela de consultas */
+/* General styles for the consultas section */
 ul.consultas {
     margin-top: 0;
 }
 
+/* Style for the new consultation link */
 a.nova-consulta {
     margin-bottom: 24px;
+}
+
+/* Styles for select elements (pets and veterinarians) */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Added transition for smoother focus effects */
+}
+
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Style for options within the select */
+select option {
+    padding: 10px; /* This is not necessary as it has no effect on option styling */
+    background-color: white;
+}
+
+/* Hover effect for options (dependent on browser, may not work consistently) */
+select option:hover {
+    background-color: #f0f0f0;
 }

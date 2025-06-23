@@ -1,103 +1,46 @@
-.tabela-pets {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 24px;
-    background-color: #292929;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-}
-
-.tabela-pets th,
-.tabela-pets td {
-    padding: 14px 20px;
-    text-align: left;
-    border-bottom: 1px solid #3a3a3a;
-    color: #e0e0e0;
-}
-
-.tabela-pets th {
-    background-color: #1e1e1e;
-    color: #81a1c1;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.tabela-pets tr:hover {
-    background-color: #3e4551;
-}
-
-/* Botão voltar estilo menu hambúrguer */
-.btn-voltar {
-    font-size: 24px;
-    padding: 6px 14px;
-    background: transparent;
-    color: #81a1c1;
-    border: 2px solid #81a1c1;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-right: 16px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.btn-voltar:hover {
-    background-color: #81a1c1;
-    color: #121212;
-}
-
-/* Cabeçalho com botão + título */
-.top-bar {
+.botoes-form {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: start;
-    margin-bottom: 24px;
-}
-
-/* Botão "Novo Pet" herdado do global .btn-acao */
-/* ===== Formulário Pet ===== */
-.form-pet label {
-    display: block;
     margin-top: 16px;
-    font-weight: 600;
-    color: #81a1c1;
 }
 
-.form-pet input[type="text"],
-.form-pet input[type="number"],
-.form-pet select {
+/* Botão cancelar com aparência mais neutra */
+.btn-cancelar {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #444, #2c2c2c);
+    color: #ddd;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(100, 100, 100, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background: linear-gradient(135deg, #555, #3a3a3a);
+    box-shadow: 0 6px 14px rgba(100, 100, 100, 0.6);
+}
+select {
     width: 100%;
     padding: 10px 14px;
-    margin-top: 6px;
     background-color: #292929;
     border: 1.5px solid #444;
     border-radius: 8px;
     color: #ddd;
     font-size: 15px;
     transition: border-color 0.3s ease;
+    appearance: none;
 }
 
-.form-pet input:focus,
-.form-pet select:focus {
+select:focus {
     outline: none;
     border-color: #81a1c1;
     background-color: #1c1c1c;
 }
 
-.form-pet button {
-    margin-top: 24px;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    font-weight: 700;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(118, 75, 162, 0.7);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-pet button:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    box-shadow: 0 6px 18px rgba(118, 75, 162, 0.9);
+select option {
+    background-color: #292929;
+    color: #ddd;
 }

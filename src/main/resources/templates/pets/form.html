@@ -31,12 +31,16 @@
 
         <label for="sexo">Sexo</label>
         <select id="sexo" th:field="*{sexo}">
-            <option value="" disabled selected>Selecione o sexo</option>
+            <option value="" disabled th:if="${pet.sexo == null}">Selecione o sexo</option>
             <option value="M">Macho</option>
             <option value="F">Fêmea</option>
         </select>
 
-        <button type="submit">Salvar</button>
+
+        <div class="botoes-form">
+            <button type="submit">Salvar</button>
+            <a href="/pets" class="btn-cancelar">Cancelar</a>
+        </div>
     </form>
 </div>
 </body>

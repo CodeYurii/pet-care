@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <title>Consultas</title>
-    <link rel="stylesheet" href="/css/style-global.css"/>
+    <link rel="stylesheet" href="/css/style-global.css">
     <link rel="stylesheet" href="/css/style-consultas.css">
 </head>
 <body>
-<h1>Consultas</h1>
-<a th:href="@{/consultas/novo}">Nova Consulta</a>
-<ul>
-    <li th:each="c : ${consultas}">
-        <span th:text="${c.data} + ' - ' + ${c.pet.nome} + ' com ' + ${c.veterinario.nome}"></span>
-    </li>
-</ul>
+<a href="/" class="btn-voltar" title="Voltar para a Home">
+  <span class="hamburguer">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</a>
+
+<div class="container">
+    <h1>🐾 Consultas</h1>
+
+    <a class="btn-novo" th:href="@{/consultas/novo}">➕ Nova Consulta</a>
+
+    <ul class="lista-consultas">
+        <li th:each="c : ${consultas}">
+            <strong th:text="${#temporals.format(c.data, 'dd/MM/yyyy HH:mm')}">Data</strong><br>
+            <span th:text="'Pet: ' + ${c.pet.nome}">Pet</span><br>
+            <span th:text="'Veterinário: ' + ${c.veterinario.nome}">Veterinário</span><br>
+            <span th:text="'Descrição: ' + ${c.descricao}">Descrição</span><br>
+            <span th:text="'Observações: ' + ${c.observacoes}">Observações</span><br>
+            <span th:if="${c.remedios}">
+        <strong>Remédios:</strong>
+        <ul>
+          <li th:each="r : ${c.remedios}" th:text="${r}"></li>
+        </ul>
+      </span>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

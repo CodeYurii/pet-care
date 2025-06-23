@@ -1,10 +1,11 @@
-/* === RESET GLOBAL === */
+/* === GLOBAL RESET === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* === BODY STYLES === */
 body {
     background-color: #121212;
     color: #e0e0e0;
@@ -12,10 +13,8 @@ body {
     line-height: 1.6;
 }
 
-/* === CONTAINER CENTRALIZADO === */
-body > div,
-body > form,
-body > ul {
+/* === CONTAINER STYLES === */
+.container {
     max-width: 640px;
     margin: 40px auto;
     padding: 24px 30px;
@@ -24,7 +23,7 @@ body > ul {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
 }
 
-/* === TÍTULOS === */
+/* === HEADINGS === */
 h1 {
     font-size: 28px;
     margin-bottom: 32px;
@@ -33,7 +32,7 @@ h1 {
     text-align: center;
 }
 
-/* === FORMULÁRIOS === */
+/* === FORM STYLES === */
 form {
     display: flex;
     flex-direction: column;
@@ -66,7 +65,7 @@ input:focus {
     background-color: #1c1c1c;
 }
 
-/* === BOTÕES === */
+/* === BUTTON STYLES === */
 button,
 .btn-submit {
     align-self: flex-start;
@@ -88,7 +87,7 @@ button:hover,
     box-shadow: 0 6px 16px rgba(118, 75, 162, 0.9);
 }
 
-/* === LINKS DE AÇÃO === */
+/* === ACTION LINK STYLES === */
 a {
     display: inline-block;
     margin-bottom: 24px;
@@ -107,7 +106,7 @@ a:hover {
     box-shadow: 0 6px 14px rgba(155, 35, 234, 0.6);
 }
 
-/* === LISTAS PADRÃO === */
+/* === LIST STYLES === */
 ul {
     list-style: none;
     padding: 0;
@@ -127,12 +126,12 @@ ul li:hover {
     background-color: #3e4551;
 }
 
-/* === CONTAINER DE LARGURA MAIOR === */
+/* === LARGER CONTAINER STYLES === */
 .my-container {
     max-width: 960px;
     padding: 30px 32px;
     margin: 40px auto;
     background-color: #1e1e1e;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
 }
