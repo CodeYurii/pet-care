@@ -7,16 +7,13 @@
     <link rel="stylesheet" href="/css/style-consultas.css">
 </head>
 <body>
-<a href="/" class="btn-voltar" title="Voltar para a Home">
-  <span class="hamburguer">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</a>
-
 <div class="container form-container">
-    <h1>🐾 Nova Consulta</h1>
+    <div class="top-bar">
+        <a href="/" class="btn-voltar" title="Voltar para Home">
+            🏠
+        </a>
+        <h1>🐾 Nova Consulta</h1>
+    </div>
 
     <form th:action="@{/consultas}" method="post" th:object="${consulta}">
         <label for="data">Data e Hora</label>

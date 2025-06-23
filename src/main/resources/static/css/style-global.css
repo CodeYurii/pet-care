@@ -1,96 +1,18 @@
-/* === GLOBAL RESET === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* === BODY STYLES === */
-body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-}
-
-/* === CONTAINER STYLES === */
-.container {
-    max-width: 640px;
-    margin: 40px auto;
-    padding: 24px 30px;
-    background-color: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
-}
-
-/* === HEADINGS === */
-h1 {
-    font-size: 28px;
+/* === HEADER FLEX STYLES === */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 32px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 28px;
     color: #81a1c1;
-    font-weight: 600;
-    text-align: center;
 }
 
-/* === FORM STYLES === */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-form label {
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="datetime-local"] {
-    width: 100%;
-    padding: 10px 14px;
-    background-color: #292929;
-    border: 1.5px solid #444;
-    border-radius: 8px;
-    color: #ddd;
-    font-size: 15px;
-    transition: border-color 0.3s ease;
-}
-
-input:focus {
-    outline: none;
-    border-color: #81a1c1;
-    background-color: #1c1c1c;
-}
-
-/* === BUTTON STYLES === */
-button,
-.btn-submit {
-    align-self: flex-start;
-    padding: 10px 24px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover,
-.btn-submit:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    box-shadow: 0 6px 16px rgba(118, 75, 162, 0.9);
-}
-
-/* === ACTION LINK STYLES === */
-a {
-    display: inline-block;
-    margin-bottom: 24px;
+.page-header .btn-home {
     padding: 10px 20px;
     background: linear-gradient(135deg, #5f72be, #9b23ea);
     color: white;
@@ -101,37 +23,7 @@ a {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-a:hover {
+.page-header .btn-home:hover {
     background: linear-gradient(135deg, #9b23ea, #5f72be);
     box-shadow: 0 6px 14px rgba(155, 35, 234, 0.6);
-}
-
-/* === LIST STYLES === */
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 24px;
-    background-color: #292929;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-}
-
-ul li {
-    padding: 16px 20px;
-    border-bottom: 1px solid #3a3a3a;
-    transition: background-color 0.3s ease;
-}
-
-ul li:hover {
-    background-color: #3e4551;
-}
-
-/* === LARGER CONTAINER STYLES === */
-.my-container {
-    max-width: 960px;
-    padding: 30px 32px;
-    margin: 40px auto;
-    background-color: #1e1e1e;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
 }

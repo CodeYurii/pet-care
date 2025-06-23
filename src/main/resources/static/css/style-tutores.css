@@ -11,3 +11,28 @@ a.novo-tutor {
 .form-tutor input[type="text"] {
     margin-top: 6px;
 }
+.botoes-form {
+    display: flex;
+    justify-content: space-between; /* "Salvar" à esquerda, "Cancelar" à direita */
+    align-items: center;
+    gap: 10px; /* espaço entre os botões */
+}
+
+.btn-cancelar {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* remove sublinhado do link */
+}
+
+.btn-cancelar:hover {
+    background: linear-gradient(135deg, #555, #3a3a3a);
+    box-shadow: 0 6px 14px rgba(100, 100, 100, 0.6);
+}
+

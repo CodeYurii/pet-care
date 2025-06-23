@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinários Cadastrados</title>
-    <link rel="stylesheet" href="/css/style-global.css" />
-    <link rel="stylesheet" href="/css/style-veterinarios.css" />
+    <link rel="stylesheet" href="/css/style-global.css">
+
 </head>
 <body>
 <div class="container">
+    <div class="top-bar">
+        <a href="/" class="btn-voltar" title="Voltar para Home">
+            🏠
+        </a>
+        <h1>🐶 Veterinarios Cadastrados</h1>
+    </div>
+    <a href="/veterinarios/novo" class="btn-acao">➕ Novo Veterinário</a>
 
-    <!-- Botão Voltar -->
-    <a href="/" class="btn-voltar" title="Voltar para o menu">
-        <span class="hamburguer">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-    </a>
 
-    <h1>🐾 Veterinários Cadastrados</h1>
-
-    <a class="btn-novo" th:href="@{/veterinarios/novo}">➕ Novo Veterinário</a>
-
-    <ul class="lista-veterinarios">
-        <li th:each="vet : ${veterinarios}">
-            <strong th:text="${vet.nome}">Nome Veterinário</strong><br/>
-            <span th:text="'CPF: ' + ${vet.cpf}">CPF</span><br/>
-            <span th:text="'CRMV: ' + ${vet.crmv}">CRMV</span>
-        </li>
-    </ul>
+    <section>
+        <ul class="lista-veterinarios">
+            <li th:each="vet : ${veterinarios}" class="card-vet">
+                <strong th:text="${vet.nome}">Nome do Veterinário</strong>
+                <p><span th:text="'CPF: ' + ${vet.cpf}">CPF</span></p>
+                <p><span th:text="'CRMV: ' + ${vet.crmv}">CRMV</span></p>
+            </li>
+        </ul>
+    </section>
 </div>
 </body>
 </html>

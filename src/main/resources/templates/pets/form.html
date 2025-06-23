@@ -14,8 +14,13 @@
         <label for="nome">Nome</label>
         <input type="text" id="nome" th:field="*{nome}" placeholder="Nome do Pet" required />
 
-        <label for="idTutor">ID do Tutor</label>
-        <input type="text" id="idTutor" th:field="*{idTutor}" placeholder="ID do Tutor" required />
+        <label for="idTutor">Tutor</label>
+        <select id="idTutor" th:field="*{idTutor}" required>
+            <option value="">Selecione um tutor</option>
+            <option th:each="tutor : ${tutor}" th:value="${tutor.id}"
+                    th:text="${tutor.nome + ' - ' + tutor.cpf + ' - ' + tutor.telefone}" placeholder="ID do Tutor" required>
+            </option>
+        </select>
 
         <label for="especie">Espécie</label>
         <input type="text" id="especie" th:field="*{especie}" placeholder="Espécie do Pet" />

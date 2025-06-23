@@ -3,6 +3,7 @@ package com.petcare.controller;
 import com.petcare.dto.PetDTO;
 import com.petcare.entity.Pet;
 import com.petcare.repository.PetRepository;
+import com.petcare.repository.TutorRepository;
 import com.petcare.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +18,13 @@ public class PetController {
 
     private final PetRepository petRepository;
     private final PetService petService;
+    private final TutorRepository tutorRepository;
 
     @Autowired
-    public PetController(PetRepository petRepository, PetService petService) {
+    public PetController(PetRepository petRepository, PetService petService, TutorRepository tutorRepository) {
         this.petRepository = petRepository;
         this.petService = petService;
+        this.tutorRepository = tutorRepository;
     }
 
     // Listar pets na página HTML
@@ -35,7 +38,8 @@ public class PetController {
     // Exibir formulário para novo pet
     @GetMapping("/novo")
     public String novoPetForm(Model model) {
-        model.addAttribute("pet", new Pet());  // Criar objeto vazio para bind no formulário
+        model.addAttribute("pet", new Pet());
+        model.addAttribute("tutor", tutorRepository.findAll());// Criar objeto vazio para bind no formulário
         return "pets/form";
     }
 
