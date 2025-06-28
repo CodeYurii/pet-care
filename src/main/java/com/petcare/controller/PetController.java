@@ -1,5 +1,6 @@
 package com.petcare.controller;
 
+import com.petcare.adapter.PetAdapter;
 import com.petcare.dto.PetDTO;
 import com.petcare.entity.Pet;
 import com.petcare.repository.PetRepository;
@@ -26,6 +27,14 @@ public class PetController {
         this.petService = petService;
         this.tutorRepository = tutorRepository;
     }
+
+    @GetMapping(value = "/{id}/xml", produces = "application/xml")
+    @ResponseBody
+    public String buscarXml(@PathVariable String id) {
+        PetDTO pet = petService.buscarPorId(id);
+        return new PetAdapter().toXML(pet);
+    }
+
 
     // Listar pets na página HTML
     @GetMapping
