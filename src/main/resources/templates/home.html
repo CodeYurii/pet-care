@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="/css/style-home.css"/>
 </head>
 <body>
-<div class="home-container">
-    <h1>🐾 PetCare - Gestão</h1>
-
-    <div class="menu-opcoes">
-        <a th:href="@{/consultas}">Consultas</a>
-        <a th:href="@{/veterinarios}">Veterinários</a>
-        <a th:href="@{/tutores}">Tutores</a>
-        <a th:href="@{/pets}">Pets</a>
+    <div class="home-container">
+        <h1>🐾 PetCare - Gestão</h1>
+        <nav>
+            <ul class="menu-opcoes">
+                <li><a th:href="@{/consultas}" data-icon="📅">Consultas</a></li>
+                <li><a th:href="@{/veterinarios}" data-icon="👩‍⚕️">Veterinários</a></li>
+                <li><a th:href="@{/tutores}" data-icon="👨‍👩‍👧">Tutores</a></li>
+                <li><a th:href="@{/pets}" data-icon="🐶">Pets</a></li>
+            </ul>
+        </nav>
     </div>
-
-</div>
 </body>
 </html>

@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutores Cadastrados</title>
-    <link rel="stylesheet" href="/css/style-global.css">
     <link rel="stylesheet" href="/css/style-tutores.css">
 </head>
 <body>
 <div class="my-container">
-
-    <!-- Botão voltar para home -->
-    <a href="/" class="btn-home" title="Voltar para a Home">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <rect y="4" width="24" height="2" fill="currentColor"/>
-            <rect y="11" width="24" height="2" fill="currentColor"/>
-            <rect y="18" width="24" height="2" fill="currentColor"/>
-        </svg>
-    </a>
-
-    <h1>🐾 Tutores Cadastrados</h1>
-
-    <a class="novo-tutor" th:href="@{/tutores/novo}">➕ Novo Tutor</a>
+    <div class="top-bar">
+        <a href="/" class="btn-voltar" title="Voltar para Home">🏠</a>
+        <h1>🐾 Tutores Cadastrados</h1>
+    </div>
 
     <ul class="tutores">
         <li th:each="tutor : ${tutores}">
@@ -30,6 +21,8 @@
             <span th:text="' - Endereço: ' + ${tutor.endereco}">endereco</span>
         </li>
     </ul>
+
+    <a class="novo-tutor" th:href="@{/tutores/novo}">➕ Novo Tutor</a>
 </div>
 
 </body>

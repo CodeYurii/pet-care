@@ -1,60 +1,81 @@
-/* === RESET BÁSICO === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    padding: 20px;
 }
 
-/* === CONTAINER PRINCIPAL === */
 .home-container {
     text-align: center;
-    padding: 40px;
-    background-color: #1e1e1e;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
-    width: 90%;
-    max-width: 480px;
 }
 
-/* === TÍTULO PRINCIPAL === */
 .home-container h1 {
-    font-size: 28px;
-    color: #81a1c1;
-    margin-bottom: 36px;
+    font-size: 2.8rem;
+    color: #2f4f4f;
+    margin-bottom: 40px;
+    white-space: nowrap;
 }
 
-/* === MENU DE OPÇÕES === */
 .menu-opcoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+    align-items: center; /* centraliza os botões */
 }
 
-/* === BOTÕES DE MENU === */
 .menu-opcoes a {
     text-decoration: none;
-    color: white;
-    padding: 16px;
-    background: linear-gradient(135deg, #5f72be, #9b23ea);
-    border-radius: 12px;
+    color: #3a9d23;
+    font-size: 1.4rem;
     font-weight: 600;
-    font-size: 16px;
-    box-shadow: 0 4px 12px rgba(155, 35, 234, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 14px 25px;
+    width: 280px; /* todos os botões terão essa largura */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.menu-opcoes a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(155, 35, 234, 0.6);
-    background: linear-gradient(135deg, #9b23ea, #5f72be);
+.menu-opcoes a:hover,
+.menu-opcoes a:focus {
+    background-color: #3a9d23;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(58, 157, 35, 0.5);
+    outline: none;
+}
+
+.menu-opcoes a::before {
+    content: attr(data-icon);
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+@media (max-width: 400px) {
+    .home-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-opcoes a {
+        width: 240px;
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        gap: 8px;
+    }
 }

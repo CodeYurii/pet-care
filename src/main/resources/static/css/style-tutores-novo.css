@@ -1,11 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Corpo com centralização e fundo claro */
 body {
     background-color: #f9fafb;
     color: #333;
@@ -14,20 +6,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container principal do formulário */
-.form-pet {
-    background-color: #fff;
+.my-container {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    width: 100%;
-    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* Título com ícone */
-.form-pet h1 {
+h1 {
     font-size: 2rem;
     color: #2f4f4f;
     text-align: center;
@@ -35,91 +26,81 @@ body {
     white-space: nowrap;
 }
 
-/* Formulário */
-form {
+.form-tutor {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-/* Rótulos */
 label {
     font-weight: 600;
     font-size: 0.95rem;
     color: #555;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Campos de entrada e seleção */
-input[type="text"],
-input[type="number"],
-select {
+input[type="text"] {
+    margin-top: 6px;
     padding: 12px;
-    border: 1.8px solid #ccc;
-    border-radius: 8px;
     font-size: 1rem;
+    border-radius: 8px;
+    border: 1.8px solid #ccc;
     transition: border-color 0.3s, box-shadow 0.3s;
-    width: 100%;
 }
 
-input:focus,
-select:focus {
+input[type="text"]:focus {
     border-color: #3a9d23;
     outline: none;
     box-shadow: 0 0 6px rgba(58, 157, 35, 0.4);
 }
 
-/* Área dos botões */
 .botoes-form {
     display: flex;
-    gap: 12px;
     justify-content: center;
-    margin-top: 10px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-/* Botão Salvar */
-button[type="submit"] {
-    background-color: #3a9d23;
-    color: white;
+button[type="submit"],
+.btn-cancelar {
     font-weight: 600;
     font-size: 1rem;
     padding: 12px 24px;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
+    border: none;
     transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
-/* Hover botão salvar */
+button[type="submit"] {
+    background-color: #3a9d23;
+    color: white;
+}
+
 button[type="submit"]:hover {
     background-color: #2e7d1e;
 }
 
-/* Botão cancelar */
 .btn-cancelar {
     background-color: #ccc;
     color: #333;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
 }
 
-/* Hover botão cancelar */
 .btn-cancelar:hover {
     background-color: #bbb;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 600px) {
-    .form-pet {
+    .my-container {
         padding: 30px 20px;
     }
 
-    .form-pet h1 {
+    h1 {
         font-size: 1.6rem;
     }
 
@@ -130,6 +111,5 @@ button[type="submit"]:hover {
     button,
     .btn-cancelar {
         width: 100%;
-        text-align: center;
     }
 }

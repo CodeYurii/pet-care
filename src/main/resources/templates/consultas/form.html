@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Consulta</title>
-    <link rel="stylesheet" href="/css/style-global.css">
+<!--    <link rel="stylesheet" href="/css/style-global.css">-->
     <link rel="stylesheet" href="/css/style-consultas.css">
 </head>
 <body>
-<div class="container form-container">
+<div class="form-container">
     <div class="top-bar">
-        <a href="/" class="btn-voltar" title="Voltar para Home">
-            🏠
-        </a>
         <h1>🐾 Nova Consulta</h1>
     </div>
 
@@ -26,12 +23,13 @@
         <textarea id="observacoes" th:field="*{observacoes}" placeholder="Observações"></textarea>
 
         <label for="remedios">Remédios (separados por vírgula)</label>
-        <input type="text" id="remedios" name="remedios" placeholder="Ex: Dipirona, Amoxicilina" th:value="${#strings.listJoin(consulta.remedios, ', ')}" />
+        <input type="text" id="remedios" name="remedios" placeholder="Ex: Dipirona, Amoxicilina"
+               th:value="${#strings.listJoin(consulta.remedios, ', ')}" />
 
         <label for="idPet">Pet</label>
         <select id="idPet" th:field="*{idPet}" required>
             <option value="">Selecione um pet</option>
-            <option th:each="pet : ${pets}" th:value="${pet.id}" 
+            <option th:each="pet : ${pets}" th:value="${pet.id}"
                     th:text="${pet.nome + ' - ' + pet.especie + ' - ' + pet.raca + (pet.idade != null ? ' - ' + pet.idade + ' anos' : '')}">
             </option>
         </select>
@@ -39,12 +37,15 @@
         <label for="idVeterinario">Veterinário</label>
         <select id="idVeterinario" th:field="*{idVeterinario}" required>
             <option value="">Selecione um veterinário</option>
-            <option th:each="vet : ${veterinarios}" th:value="${vet.id}" 
+            <option th:each="vet : ${veterinarios}" th:value="${vet.id}"
                     th:text="${vet.nome + ' - CRMV: ' + vet.crmv}">
             </option>
         </select>
 
-        <button type="submit" class="btn-submit">Salvar</button>
+        <div class="botoes-form">
+            <button type="submit">Salvar</button>
+            <a href="/consultas" class="btn-cancelar">Cancelar</a>
+        </div>
     </form>
 </div>
 </body>

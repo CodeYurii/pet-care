@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo claro e centralização */
+body {
+    background-color: #f9fafb;
+    color: #333;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.my-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    font-size: 2rem;
+    color: #2f4f4f;
+    white-space: nowrap;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a9d23;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    background-color: #2e7d1e;
+}
+
+/* Botão de ação */
+.btn-acao {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    background-color: #3a9d23;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-acao:hover {
+    background-color: #2e7d1e;
+}
+
+/* Tabela de pets */
+.tabela-pets {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tabela-pets thead {
+    background-color: #3a9d23;
+    color: white;
+}
+
+.tabela-pets th,
+.tabela-pets td {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.tabela-pets tr:nth-child(even) {
+    background-color: #f3fdf3;
+}
+
+.tabela-pets tr:hover {
+    background-color: #e6f4e6;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .top-bar h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-acao {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tabela-pets th,
+    .tabela-pets td {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+}

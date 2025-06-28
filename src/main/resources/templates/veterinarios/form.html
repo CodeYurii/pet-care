@@ -3,20 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Cadastro de Veterinário</title>
-  <link rel="stylesheet" href="/css/style-global.css" />
   <link rel="stylesheet" href="/css/style-veterinarios.css" />
 </head>
 <body>
 <div class="container form-container">
-
-  <!-- Botão Voltar -->
-  <a href="/" class="btn-voltar" title="Voltar para o menu">
-      <span class="hamburguer">
-          <span></span>
-          <span></span>
-          <span></span>
-      </span>
-  </a>
 
   <h1>🐾 Cadastro de Veterinário</h1>
 
@@ -30,7 +20,10 @@
     <label for="crmv">CRMV</label>
     <input type="number" id="crmv" th:field="*{crmv}" placeholder="Número CRMV" required />
 
-    <button type="submit" class="btn-submit">Salvar</button>
+    <div class="botoes-form">
+      <button type="submit">Salvar</button>
+      <a href="/veterinarios" class="btn-cancelar">Cancelar</a>
+    </div>
   </form>
 </div>
 </body>
